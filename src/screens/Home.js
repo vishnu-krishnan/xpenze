@@ -1,10 +1,23 @@
-import { View, Text } from "react-native";
 import React from "react";
+import { View, Text } from "react-native";
+import { Appearance } from "react-native";
+import { baseLayout } from "../styles/ScreenStyles";
 
-export default function Home() {
+const Home = () => {
+  const colorScheme = Appearance.getColorScheme();
+
+  const styles =
+    colorScheme === "dark" ? baseLayout.darkContainer : baseLayout.container;
+  const textStyles =
+    colorScheme === "dark" ? baseLayout.darkText : baseLayout.text;
+
+  console.log("Home page loaded");
+
   return (
-    <View>
-      <Text>HomeScreen</Text>
+    <View style={styles}>
+      <Text style={textStyles}>Home!</Text>
     </View>
   );
-}
+};
+
+export default Home;

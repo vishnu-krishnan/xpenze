@@ -1,10 +1,22 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from "react";
+import { View, Text } from "react-native";
+import { Appearance } from "react-native";
+import { baseLayout } from "../styles/ScreenStyles";
 
-export default function CreditUtilisation() {
+const CreditUtilisation = () => {
+  const colorScheme = Appearance.getColorScheme();
+
+  const styles =
+    colorScheme === "dark" ? baseLayout.darkContainer : baseLayout.container;
+  const textStyles =
+    colorScheme === "dark" ? baseLayout.darkText : baseLayout.text;
+
+  console.log("Credit Util page loaded");
   return (
-    <View>
-      <Text>CreditUtilisation</Text>
+    <View style={styles}>
+      <Text style={textStyles}>CreditUtilisation!</Text>
     </View>
-  )
-}
+  );
+};
+
+export default CreditUtilisation;
