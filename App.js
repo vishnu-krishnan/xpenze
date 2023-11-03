@@ -25,7 +25,7 @@ const screenOptions = {
 
 const MainTabs = () => {
   useEffect(() => {
-    const isDarkBackground = true;
+    const isDarkBackground = false;
     const statusBarStyle = {
       translucent: false,
       animated: true,
