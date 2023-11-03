@@ -1,26 +1,27 @@
 import { StyleSheet } from "react-native";
+import { StatusBar } from "react-native";
 
 export const baseLayout = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white", 
+    backgroundColor: "#FFFFFF",
   },
   text: {
     fontSize: 24,
-    color: "black", 
+    color: "white",
     textAlign: "center",
   },
   darkContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "black", 
+    backgroundColor: "#000000",
   },
   darkText: {
     fontSize: 24,
-    color: "white", 
+    color: "white",
     textAlign: "center",
   },
 });

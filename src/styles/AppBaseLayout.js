@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
 
 export const appStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#FDFDFD",
+  },
   tabBar: {
     position: "absolute",
     bottom: 0,
@@ -8,7 +12,7 @@ export const appStyles = StyleSheet.create({
     right: 0,
     elevation: 0,
     height: 60,
-    backgroundColor: "#fff",
+    backgroundColor: "#FDFDFD",
   },
   tabBarIconContainer: {
     alignItems: "center",

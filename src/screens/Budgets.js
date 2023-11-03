@@ -1,37 +1,41 @@
 import React from "react";
 import { ScrollView, View, Text } from "react-native";
 import { Appearance } from "react-native";
-import { baseLayout } from "../styles/ScreenStyles";
-import { cardStyles } from "../styles/CardStyles";
 
-const Budgets = () => {
-  const customCardStyles = cardStyles(370, 100);
+import { appStyles } from "../styles/AppBaseLayout";
+import { cardStyles } from "../styles/CardStyles";
+import { titleStyles } from "../styles/HeaderStyles";
+
+const Budgets = ({ navigation }) => {
+  const customCardStyles = cardStyles(370, 120);
 
   const colorScheme = Appearance.getColorScheme();
 
   const styles =
-    colorScheme === "dark" ? baseLayout.darkContainer : baseLayout.container;
-  const textStyles =
-    colorScheme === "dark" ? baseLayout.darkText : baseLayout.text;
+    colorScheme === "dark" ? appStyles.container : appStyles.container;
 
-  console.log("Budgets page loaded");
+  const textStyles =
+    colorScheme === "dark" ? appStyles.darkText : appStyles.text;
 
   const cards = [
     {
-      title: "Monthly Budget",
-      description: "35000",
+      title: "OCTOBER",
+      budget: "35,000",
     },
   ];
+  console.log("Budgets page loaded");
+
   return (
-    <ScrollView>
+    <ScrollView style={customCardStyles.container}>
       <View style={styles}>
-        <Text style={textStyles}>Budgets!</Text>
+        <View style={titleStyles.titleContainer}>
+          <Text style={titleStyles.titleText}>Budgets!</Text>
+        </View>
+
         {cards.map((card, index) => (
           <View key={index} style={customCardStyles.card}>
             <Text style={customCardStyles.cardTitle}>{card.title}</Text>
-            <Text style={customCardStyles.cardDescription}>
-              {card.description}
-            </Text>
+            <Text style={customCardStyles.cardDescription}>{card.budget}</Text>
           </View>
         ))}
       </View>

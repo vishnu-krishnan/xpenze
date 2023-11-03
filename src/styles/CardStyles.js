@@ -2,16 +2,16 @@ import { StyleSheet } from "react-native";
 
 export const cardStyles = (width, height) => {
   return StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: "#FDFDFD",
+    },
     card: {
       width,
       height,
       borderRadius: 10,
-      backgroundColor: "#fff",
-      shadowColor: "#000",
-      shadowOffset: {
-        width: 0,
-        height: 2,
-      },
+      backgroundColor: "#176B87",
+      shadowColor: "black",
       shadowOpacity: 0.25,
       shadowRadius: 3.84,
       elevation: 5,
@@ -20,12 +20,18 @@ export const cardStyles = (width, height) => {
       alignItems: "center",
     },
     cardTitle: {
-      fontSize: 20,
+      fontSize: 18,
       fontWeight: "bold",
+      color: "white",
+      textAlign: "left",
     },
     cardDescription: {
+      fontSize: 40,
+      color: "#EF7028",
+    },
+    cardDiffRate: {
       fontSize: 16,
-      color: "#888",
+      color: "#60C0C3",
     },
   });
 };

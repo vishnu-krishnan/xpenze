@@ -1,10 +1,10 @@
-import React from "react";
-import { ScrollView, View, Text, TouchableOpacity } from "react-native";
+import React, { useEffect } from "react";
+import { ScrollView, View, Text } from "react-native";
 import { Appearance } from "react-native";
 
-import { baseLayout } from "../styles/ScreenStyles";
+import { appStyles } from "../styles/AppBaseLayout";
 import { cardStyles } from "../styles/CardStyles";
-import { headerStyles, titleStyles } from "../styles/HeaderStyles";
+import { titleStyles } from "../styles/HeaderStyles";
 
 const Home = ({ navigation }) => {
   const customCardStyles = cardStyles(370, 120);
@@ -12,40 +12,32 @@ const Home = ({ navigation }) => {
   const colorScheme = Appearance.getColorScheme();
 
   const styles =
-    colorScheme === "dark" ? baseLayout.darkContainer : baseLayout.container;
-  const textStyles =
-    colorScheme === "dark" ? baseLayout.darkText : baseLayout.text;
+    colorScheme === "dark" ? appStyles.container : appStyles.container;
 
-  console.log("Home page loaded");
+  const textStyles =
+    colorScheme === "dark" ? appStyles.darkText : appStyles.text;
 
   const cards = [
     {
-      title: "Total Expense",
-      description: "This is the first card.",
-    },
-    {
-      title: "Card 2",
-      description: "This is the second card.",
-    },
-    {
-      title: "Card 3",
-      description: "This is the third card.",
+      title: "OCTOBER'23",
+      expense: "37,000",
+      diffRate: "(-30%)",
     },
   ];
+  console.log("Home page loaded");
 
   return (
-    <ScrollView>
+    <ScrollView style={customCardStyles.container}>
       <View style={styles}>
         <View style={titleStyles.titleContainer}>
-          <Text style={titleStyles.titleText}>Home!</Text>
+          <Text style={titleStyles.titleText}>EXPENZE</Text>
         </View>
 
         {cards.map((card, index) => (
           <View key={index} style={customCardStyles.card}>
             <Text style={customCardStyles.cardTitle}>{card.title}</Text>
-            <Text style={customCardStyles.cardDescription}>
-              {card.description}
-            </Text>
+            <Text style={customCardStyles.cardDescription}>{card.expense}</Text>
+            <Text style={customCardStyles.cardDiffRate}>{card.diffRate}</Text>
           </View>
         ))}
       </View>
