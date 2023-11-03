@@ -13,6 +13,6 @@ export const titleStyles = StyleSheet.create({
   },
   titleText: {
     fontSize: 25,
-    color: "#DAFFFB",
+    color: "#04364A",
   },
 });

@@ -26,19 +26,20 @@ const Budgets = ({ navigation }) => {
   console.log("Budgets page loaded");
 
   return (
-    <ScrollView style={customCardStyles.container}>
-      <View style={styles}>
-        <View style={titleStyles.titleContainer}>
-          <Text style={titleStyles.titleText}>Budgets!</Text>
-        </View>
-
-        {cards.map((card, index) => (
-          <View key={index} style={customCardStyles.card}>
-            <Text style={customCardStyles.cardTitle}>{card.title}</Text>
-            <Text style={customCardStyles.cardDescription}>{card.budget}</Text>
-          </View>
-        ))}
+    <ScrollView
+      contentContainerStyle={customCardStyles.container}
+      style={styles}
+    >
+      <View style={titleStyles.titleContainer}>
+        <Text style={titleStyles.titleText}>Budgets!</Text>
       </View>
+
+      {cards.map((card, index) => (
+        <View key={index} style={customCardStyles.card}>
+          <Text style={customCardStyles.cardTitle}>{card.title}</Text>
+          <Text style={customCardStyles.cardDescription}>{card.budget}</Text>
+        </View>
+      ))}
     </ScrollView>
   );
 };

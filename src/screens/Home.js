@@ -27,20 +27,21 @@ const Home = ({ navigation }) => {
   console.log("Home page loaded");
 
   return (
-    <ScrollView style={customCardStyles.container}>
-      <View style={styles}>
-        <View style={titleStyles.titleContainer}>
-          <Text style={titleStyles.titleText}>EXPENZE</Text>
-        </View>
-
-        {cards.map((card, index) => (
-          <View key={index} style={customCardStyles.card}>
-            <Text style={customCardStyles.cardTitle}>{card.title}</Text>
-            <Text style={customCardStyles.cardDescription}>{card.expense}</Text>
-            <Text style={customCardStyles.cardDiffRate}>{card.diffRate}</Text>
-          </View>
-        ))}
+    <ScrollView
+      contentContainerStyle={customCardStyles.container}
+      style={styles}
+    >
+      <View style={titleStyles.titleContainer}>
+        <Text style={titleStyles.titleText}>EXPENZE</Text>
       </View>
+
+      {cards.map((card, index) => (
+        <View key={index} style={customCardStyles.card}>
+          <Text style={customCardStyles.cardTitle}>{card.title}</Text>
+          <Text style={customCardStyles.cardDescription}>{card.expense}</Text>
+          <Text style={customCardStyles.cardDiffRate}>{card.diffRate}</Text>
+        </View>
+      ))}
     </ScrollView>
   );
 };
