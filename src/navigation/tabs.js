@@ -13,6 +13,8 @@ import Budgets from "../screens/Budgets";
 import Category from "../screens/Category";
 import Goals from "../screens/Goals";
 
+import GoalsList from "../screens/GoalsList";
+
 const Tab = createBottomTabNavigator();
 
 const TabBar = () => {

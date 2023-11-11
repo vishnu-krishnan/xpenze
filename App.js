@@ -26,9 +26,9 @@ const MainTabs = () => {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{ headerShown: false }}
-          initialRouteName="Home"
+          initialRouteName="Tabs"
         >
-          <Stack.Screen name="Home" component={Tabs} />
+          <Stack.Screen name="Tabs" component={Tabs} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>

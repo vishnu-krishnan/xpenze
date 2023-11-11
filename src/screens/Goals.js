@@ -1,46 +1,41 @@
 import React from "react";
-import { ScrollView, View, Text } from "react-native";
-import { Appearance } from "react-native";
-import { baseLayout } from "../styles/ScreenStyles";
-import { cardStyles } from "../styles/CardStyles";
+import {
+  ScrollView,
+  View,
+  Text,
+  KeyboardAvoidingView,
+  Platform,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
+import { goalsTabStyles } from "../styles/GoalsLayout";
+import GoalsList from "./GoalsList";
 
-const Goals = () => {
-  const customCardStyles = cardStyles(370, 100);
-
-  const colorScheme = Appearance.getColorScheme();
-
-  const styles =
-    colorScheme === "dark" ? baseLayout.darkContainer : baseLayout.container;
-  const textStyles =
-    colorScheme === "dark" ? baseLayout.darkText : baseLayout.text;
-
+export default function Goals() {
   console.log("Goals page loaded");
 
-  const cards = [
-    {
-      title: "Car",
-      description: "10 Lakhs",
-    },
-    {
-      title: "Mobile",
-      description: "50 K",
-    },
-  ];
   return (
-    <ScrollView>
-      <View style={styles}>
-        <Text style={textStyles}>Goals!</Text>
-        {cards.map((card, index) => (
-          <View key={index} style={customCardStyles.card}>
-            <Text style={customCardStyles.cardTitle}>{card.title}</Text>
-            <Text style={customCardStyles.cardDescription}>
-              {card.description}
-            </Text>
-          </View>
-        ))}
+    <ScrollView style={goalsTabStyles.container}>
+      <View style={goalsTabStyles.tasksWrapper}>
+        <Text style={goalsTabStyles.sectionTitles}>Goals!</Text>
+
+        <View style={goalsTabStyles.body}>
+          <GoalsList text={"Car"} />
+          <GoalsList text={"Phone"} />
+        </View>
       </View>
+
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "android" ? "padding" : "height"}
+        style={goalsTabStyles.writeTaskWrapper}
+      >
+        <TextInput style={goalsTabStyles.input} placeholder="Write the goal" />
+        <TouchableOpacity>
+          <View style={goalsTabStyles.addWrapper}>
+            <Text style={goalsTabStyles.addText}>+</Text>
+          </View>
+        </TouchableOpacity>
+      </KeyboardAvoidingView>
     </ScrollView>
   );
-};
-
-export default Goals;
+}
