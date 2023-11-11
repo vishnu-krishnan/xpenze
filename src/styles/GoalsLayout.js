@@ -24,7 +24,7 @@ export const goalsTabStyles = StyleSheet.create({
     flexWrap: "wrap",
   },
   item: {
-    backgroundColor: "lightgreen",
+    backgroundColor: "#60C0C3",
     padding: 20,
     borderRadius: 15,
     flexDirection: "row",
@@ -34,6 +34,7 @@ export const goalsTabStyles = StyleSheet.create({
   },
   itemText: {
     maxWidth: "100%",
+    color: "white",
   },
   circular: {
     width: 12,
